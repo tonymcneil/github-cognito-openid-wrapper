@@ -39,7 +39,6 @@ describe('openid domain layer', () => {
         beforeEach(() => {
           githubMock.getUserDetails.mockImplementation(() =>
             Promise.resolve({
-              sub: 'Some sub',
               id: 1234,
               username: 'username',
               name: 'some name',

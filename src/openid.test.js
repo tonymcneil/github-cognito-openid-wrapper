@@ -40,6 +40,8 @@ describe('openid domain layer', () => {
           githubMock.getUserDetails.mockImplementation(() =>
             Promise.resolve({
               sub: 'Some sub',
+              id: 1234,
+              username: 'username',
               name: 'some name',
               login: 'username',
               html_url: 'some profile',
@@ -62,7 +64,9 @@ describe('openid domain layer', () => {
               picture: 'picture.jpg',
               preferred_username: 'username',
               profile: 'some profile',
-              sub: 'undefined',
+              sub: '1234',
+              id: 1234,
+              username: 'username',
               updated_at: 1200285215,
               website: 'website'
             });

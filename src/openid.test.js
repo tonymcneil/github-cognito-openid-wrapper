@@ -159,6 +159,8 @@ describe('openid domain layer', () => {
         expect(openid.getConfigFor('not-a-real-host.com')).to.deep.equal({
           authorization_endpoint: 'https://not-a-real-host.com/authorize',
           claims_supported: [
+            'id',
+            'username',
             'sub',
             'name',
             'preferred_username',

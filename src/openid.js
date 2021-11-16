@@ -128,6 +128,8 @@ const getConfigFor = host => ({
   request_object_signing_alg_values_supported: ['none'],
   display_values_supported: ['page', 'popup'],
   claims_supported: [
+    'id',
+    'username',
     'sub',
     'name',
     'preferred_username',

@@ -39,7 +39,8 @@ describe('openid domain layer', () => {
         beforeEach(() => {
           githubMock.getUserDetails.mockImplementation(() =>
             Promise.resolve({
-              sub: 'Some sub',
+              id: 1234,
+              username: 'username',
               name: 'some name',
               login: 'username',
               html_url: 'some profile',
@@ -62,7 +63,9 @@ describe('openid domain layer', () => {
               picture: 'picture.jpg',
               preferred_username: 'username',
               profile: 'some profile',
-              sub: 'undefined',
+              sub: '1234',
+              id: 1234,
+              username: 'username',
               updated_at: 1200285215,
               website: 'website'
             });
@@ -156,6 +159,8 @@ describe('openid domain layer', () => {
         expect(openid.getConfigFor('not-a-real-host.com')).to.deep.equal({
           authorization_endpoint: 'https://not-a-real-host.com/authorize',
           claims_supported: [
+            'id',
+            'username',
             'sub',
             'name',
             'preferred_username',

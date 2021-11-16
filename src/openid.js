@@ -17,6 +17,8 @@ const getUserInfo = accessToken =>
         // and http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims
         const claims = {
           sub: `${userDetails.id}`, // OpenID requires a string
+          id: userDetails.id,
+          username: userDetails.login,
           name: userDetails.name,
           preferred_username: userDetails.login,
           profile: userDetails.html_url,
@@ -126,6 +128,8 @@ const getConfigFor = host => ({
   request_object_signing_alg_values_supported: ['none'],
   display_values_supported: ['page', 'popup'],
   claims_supported: [
+    'id',
+    'username',
     'sub',
     'name',
     'preferred_username',
